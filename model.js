@@ -17,4 +17,17 @@ const Board = sequelize.define('Board', {
     rating: DataTypes.NUMBER
 });
 
+
+// Puts User in A one to many relation with Board
+User.hasMany(Board);
+Board.belongsTo(User);
+
+// Cheese and Boards many to many
+
+Board.belongsToMany(Cheese, { through: 'BoardCheese' });
+Cheese.belongsToMany(Board, { through: 'BoardCheese' });
+
+
+
+
 module.exports = { User, Cheese, Board };

@@ -66,3 +66,4 @@ describe('Board model', () => {
       expect(user.rating).toEqual(0)
     });
   });
+
